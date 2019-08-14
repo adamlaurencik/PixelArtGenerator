@@ -1,0 +1,17 @@
+{
+  "name": "pixel-art-back-end",
+  "version": "0.0.1",
+  "description": "Backend for pixel art service project",
+  "main": "node.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\""
+  },
+  "keywords": [
+    "Pixelart"
+  ],
+  "author": "Adam Laurencik",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

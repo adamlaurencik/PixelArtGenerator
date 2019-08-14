@@ -1,0 +1,29 @@
+##################################
+#      Setup node container      #
+##################################
+server:
+  build: ./Backend
+  expose:
+    - ${APP_SERVER_PORT}
+  environment:
+    API_HOST: ${API_HOST}
+    APP_SERVER_PORT: ${APP_SERVER_PORT}
+  ports:
+    - ${APP_SERVER_PORT}:${APP_SERVER_PORT}
+  volumes:
+    - ./server/src:/serv/app/server/src
+  command: node node.js
+##################################
+#      Setup client container    #
+##################################
+client:
+  build: ./Frontend
+  expose:
+    - ${REACT_APP_PORT}
+  environment:
+    REACT_APP_PORT: ${REACT_APP_PORT}
+  ports:
+    - ${REACT_APP_PORT}:${REACT_APP_PORT}
+  volumes:
+    - ./client/src:/serv/app/server/src
+  command: npm run start
